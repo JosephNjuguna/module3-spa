@@ -14,14 +14,14 @@ function Projects({ projects, setProjects }) {
         return matchesSearch;
     });
 
-    function handleItemFormSubmit(newItem) {
-        setItems((prevItems) => [...prevItems, newItem]);
+    function handleProjectFormSubmit(newProject) {
+        setProjects((prevProject) => [...prevProject, newProject]);
     }
 
     return (
         <>
-            <Form />
-            <Search search={searchProject} onSearchChange={handleSearch} />
+            <Form handleProjectFormSubmit={handleProjectFormSubmit}/>
+            <Search search={searchProject} onSearchChange={handleSearch}/>
             {projectsToDisplay.map((project) => (
                 <Project key={project.id} name={project.name} description={project.description} />
             ))}
@@ -31,7 +31,6 @@ function Projects({ projects, setProjects }) {
 
 
 function Project({ name, description }) {
-
     return (
         <li className="project">
             <h3>{name}</h3>
