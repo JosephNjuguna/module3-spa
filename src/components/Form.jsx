@@ -11,7 +11,15 @@ function Form({ handleProjectFormSubmit }) {
             name: name,
             description: description
         }
-        handleProjectFormSubmit(newProject);
+        if(name === ""){
+            alert("enter project name");
+            console.log("enter project name");  
+        } else if (description==="") {
+            alert("enter project description");
+            console.log("enter project description");
+        } else{
+            handleProjectFormSubmit(newProject);
+        }
         setName("")
         setDescription("");
     }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "./Form";
 import Search from "./Search";
+import "../assets/app.css";
 
 function Projects({ projects, setProjects }) {
     const [searchProject, setSearchProject] = useState("");
@@ -20,11 +21,13 @@ function Projects({ projects, setProjects }) {
 
     return (
         <>
-            <Form handleProjectFormSubmit={handleProjectFormSubmit}/>
-            <Search search={searchProject} onSearchChange={handleSearch}/>
-            {projectsToDisplay.map((project) => (
-                <Project key={project.id} name={project.name} description={project.description} />
-            ))}
+            <div className="center">
+                <Form handleProjectFormSubmit={handleProjectFormSubmit} />
+                <Search search={searchProject} onSearchChange={handleSearch} />
+                {projectsToDisplay.map((project) => (
+                    <Project key={project.id} name={project.name} description={project.description} />
+                ))}
+            </div>
         </>
     )
 }
