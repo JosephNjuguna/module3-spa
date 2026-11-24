@@ -1,8 +1,17 @@
-function Search() {
+import React from "react";
+
+function Search({ search, onSearchChange }) {
     return (
-        <>
-            <p>search page</p>
-        </>
-    )
+        <div className="search">
+            <input
+                type="text"
+                value={search}
+                name="search"
+                placeholder="Search projects by description..."
+                onChange={(e) => onSearchChange(e.target.value)}
+            />
+        </div>
+    );
 }
+
 export default Search;

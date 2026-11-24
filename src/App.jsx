@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import Form from './components/Form'
-import Search from './components/Search'
-import Projects from './components/Products'
+
+import Projects from './components/Projects'
+import projects from './data/projects'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [agencyProjects, setProjects]=useState(projects);
 
   return (
     <>
-      <Form />
-      <Search />
-      <Projects />
+      <Projects projects={agencyProjects} setProjects={setProjects}/>
     </>
   )
 }
